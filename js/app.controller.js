@@ -5,11 +5,13 @@ class HomeCtrl {
 		this.AppServices = AppServices;
 		this._getAllTodos();
 		this.title = '';
+		this.todos = [];
 	}
 
 	_getAllTodos() {
 		return this.AppServices.getTodos().then(resp => {
-			this.todos = resp.data;
+			this.data = resp.data;
+			this.todos = this.data.slice(0, 50);
 		});
 	}
 
@@ -20,6 +22,18 @@ class HomeCtrl {
 		}
 		this.title = '';
 		this.todos.unshift(data);
+	}
+
+	loadMore() {
+		if(!this.todos.length > 0) {
+			return;
+		}
+		while (this.todos.length < this.data.length) {
+			let last = this.todos.length - 1;
+			for(let i=1; i <=50; i++) {
+			  this.todos.push(this.data[last + i]);
+			}
+		}	
 	}
 }
 

@@ -1,6 +1,8 @@
 <div class="row">
 
-	<table class="table table-responsive">
+	<table class="table table-responsive"
+		infinite-scroll='ctrl.loadMore()' infinite-scroll-distance='2'
+		>
 		<tr>
 			<td>
 				<div class="col-sm-8">
@@ -29,7 +31,7 @@
 				<div class="clearfix"></div>
 			</td>
 		</tr>
-		<tr ng-repeat="todo in ctrl.todos | filter:search">
+		<tr ng-repeat="todo in ctrl.todos | filter:search track by $index">
 			<td ng-class="{'done': todo.completed }">
 			<input type="checkbox" 
 				ng-model="todo.completed">

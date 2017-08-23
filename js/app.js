@@ -1,5 +1,6 @@
 import angular from 'angular';
 import 'angular-ui-router';
+import ngInfiniteScroll from 'ng-infinite-scroll';
 
 import {HomeCtrl, ContactCtrl, AboutCtrl} from './app.controller';
 import RouteConfig from './app.config';
@@ -8,7 +9,9 @@ import AppServices from './app.services';
 
 const requires = [
 	'ui.router',
+	'infinite-scroll'
 ];
+
 
 let app = angular.module('app', requires);
 app.service('AppServices', AppServices);
