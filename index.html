@@ -7,8 +7,8 @@
 		<title>Todo App</title>
 
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -17,7 +17,19 @@
 		<![endif]-->
 	</head>
 	<body>
-		<ui-view></ui-view>
+		<div class="container">
+			<div class="header clearfix">
+			<nav>
+			  <ul class="nav nav-pills pull-right">
+			    <li role="presentation" ui-sref-active="active"><a ui-sref="home">Home</a></li>
+			    <li role="presentation"  ui-sref-active="active"><a ui-sref="about">About</a></li>
+			    <li role="presentation"  ui-sref-active="active"><a ui-sref="contact">Contact</a></li>
+			  </ul>
+			</nav>
+			<h3 class="text-muted">Todo App</h3>
+			</div>
+			<ui-view></ui-view>
+		</div>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
  		<script src="build/main.bundle.js"></script>
 	</body>
